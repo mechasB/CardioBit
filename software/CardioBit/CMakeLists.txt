@@ -12,7 +12,7 @@ set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
@@ -90,5 +90,10 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     # Add user defined libraries
     stm32cubemx
     "${DSP_LIBRARY}"
+)
+
+target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
+    -fpermissive
+    -Wno-missing-field-initializers 
 )
 
