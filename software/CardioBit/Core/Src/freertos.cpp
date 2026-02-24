@@ -18,14 +18,15 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "FreeRTOS.h"
-#include "task.h"
-#include "main.h"
-#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+//Data
+#include "data.hpp"
+//Tasks
+#include "Task/MeasureTask.hpp"
+#include "Task/CommunicationTask.hpp"
+#include "Task/CalculationTask.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,9 +84,9 @@ const osMutexAttr_t dataMutex_attributes = {
 
 /* USER CODE END FunctionPrototypes */
 
-void StartCommunicationTask(void *argument);
-void StartMeasureTask(void *argument);
-void StartCalculationTask(void *argument);
+extern void StartCommunicationTask(void *argument);
+extern void StartMeasureTask(void *argument);
+extern void StartCalculationTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -138,59 +139,6 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartCommunicationTask */
-/**
-  * @brief  Function implementing the CommTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartCommunicationTask */
-void StartCommunicationTask(void *argument)
-{
-  /* USER CODE BEGIN StartCommunicationTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartCommunicationTask */
-}
-
-/* USER CODE BEGIN Header_StartMeasureTask */
-/**
-* @brief Function implementing the MeasureTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartMeasureTask */
-void StartMeasureTask(void *argument)
-{
-  /* USER CODE BEGIN StartMeasureTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartMeasureTask */
-}
-
-/* USER CODE BEGIN Header_StartCalculationTask */
-/**
-* @brief Function implementing the CalculationTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartCalculationTask */
-void StartCalculationTask(void *argument)
-{
-  /* USER CODE BEGIN StartCalculationTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartCalculationTask */
-}
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

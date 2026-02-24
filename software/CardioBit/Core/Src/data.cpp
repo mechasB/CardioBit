@@ -1,8 +1,7 @@
 #include "data.hpp"
 
-namespace CardioBit {
-SharedData& SharedData::getInstance() {
-    static SharedData instance;
-    return instance;
- }
+namespace CardioBit::Data {
+    uint16_t adcRawBuffer[BUFFER_SIZE];
+    float32_t ecgFloatBuffer[BUFFER_SIZE];
+    EcgResults currentResults = {0.0f, 0.0f};
 }
