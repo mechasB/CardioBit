@@ -1,0 +1,52 @@
+build
+mx.scratch
+!.settings
+
+# --- Systemowe i IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.project
+.cproject
+.settings/
+.cache/
+
+# --- Build i Produkty Kompilacji ---
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+*.elf
+*.bin
+*.map
+*.hex
+*.list
+*.obj
+*.o
+*.d
+*.su
+*.axf
+
+# --- CMake ---
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+Makefile
+*.ninja
+*.ninja_deps
+*.ninja_log
+
+# --- STM32CubeMX (Pliki tymczasowe) ---
+.mxproject
+
+# --- Inne ---
+*.swp
+*~
+*.log
+*.tmp
