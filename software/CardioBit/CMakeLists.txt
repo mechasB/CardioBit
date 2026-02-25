@@ -46,7 +46,7 @@ add_subdirectory(cmake/stm32cubemx)
 
 # Add DSP library path
 set(DSP_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/DSP/Lib/GCC")
-set(DSP_LIBRARY "${DSP_LIB_DIR}/libarm_cortexM7l_math.a")
+set(DSP_LIBRARY "${DSP_LIB_DIR}/libarm_cortexM7lfsp_math.a")
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
