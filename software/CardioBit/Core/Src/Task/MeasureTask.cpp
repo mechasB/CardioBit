@@ -4,6 +4,7 @@
 #include "tim.h"
 
 extern osThreadId_t MeasureTaskHandle;
+extern osThreadId_t CalculationTaskHandle;
 
 void StartMeasureTask(void *argument)
 {
@@ -22,6 +23,8 @@ void StartMeasureTask(void *argument)
             CardioBit::Data::ecgFloatBuffer[i] = static_cast<float32_t>(CardioBit::Data::adcRawBuffer[i]);
     }
 
+    osThreadFlagsSet(CalculationTaskHandle, 0x02);
+    
     osDelay(1);
   }
   /* USER CODE END StartMeasureTask */
