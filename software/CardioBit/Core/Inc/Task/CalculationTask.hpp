@@ -1,5 +1,6 @@
 #pragma once
 #include "data.hpp"
+#include "fir_filter.hpp"
 
 /* USER CODE BEGIN Header_StartCalculationTask */
 /**
