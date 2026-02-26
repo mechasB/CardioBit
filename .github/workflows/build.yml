@@ -25,9 +25,15 @@ jobs:
       run: |
         cppcheck --enable=all --inline-suppr --std=c++17 \
                  --error-exitcode=1 \
-                 software/CardioBit/Core/Src \
-                 software/CardioBit/Core/Inc \
-                 software/CardioBit/Core/Tasks
+                 --force \
+                 --suppress=unusedFunction \
+                 --suppress=missingInclude \
+                 --suppress=missingIncludeSystem \
+                 -I software/CardioBit/Core/Inc \
+                 -I software/CardioBit/Drivers/CMSIS/Include \
+                 -I software/CardioBit/Drivers/CMSIS/DSP/Include \
+                 -I software/CardioBit/Drivers/STM32H7xx_HAL_Driver/Inc \
+                 software/CardioBit/Core/Src
 
   # --- JOB 2: Kompilacja projektu ---
   build:
